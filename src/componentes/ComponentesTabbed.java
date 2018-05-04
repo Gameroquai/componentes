@@ -92,9 +92,9 @@ public class ComponentesTabbed extends JTabbedPane implements ActionListener, Ch
         ancho.addChangeListener(this);
         //Slider----------------------------------------------------------------
         
-        botonS1 = new JButton("Sur 1");
-        botonS2 = new JButton("Sur 2");
-        botonS3 = new JButton("Sur 3");
+        botonS1 = new JButton("Icono");
+        botonS2 = new JButton("Fondo");
+        botonS3 = new JButton("Texto");
         textoS = new JTextField(6);
         textoS.setPreferredSize(new Dimension(WIDTH, 27));
         panelBotones.add(pBotN, BorderLayout.NORTH);
@@ -102,9 +102,9 @@ public class ComponentesTabbed extends JTabbedPane implements ActionListener, Ch
         panelBotones.add(pBotC, BorderLayout.CENTER);
         panelBotones.add(pBotO, BorderLayout.WEST);
         panelBotones.add(pBotS, BorderLayout.SOUTH);
-        checkE1 = new JCheckBox("Radio 1", false);
-        checkE2 = new JCheckBox("Radio 2", false);
-        checkE3 = new JCheckBox("Radio 3", false);
+        checkE1 = new JCheckBox("Prueba", false);
+        checkE2 = new JCheckBox("Primero", false);
+        checkE3 = new JCheckBox("Segundo", false);
         pBotN.add(botonN1);
         pBotN.add(botonN2);
         pBotO.add(anchoL);
@@ -135,6 +135,17 @@ public class ComponentesTabbed extends JTabbedPane implements ActionListener, Ch
 
     @Override
     public void stateChanged(ChangeEvent e) {
+        JSlider slider = (JSlider)e.getSource();
+        int valor = slider.getValue();
+        
+        if(slider == ancho){
+            botonPrueba.setSize(valor, HEIGHT);
+            anchoV.setText("Ancho: "+valor);
+        }
+        else{
+            botonPrueba.setSize(WIDTH, valor);
+            altoV.setText("Alto: "+valor);
+        }
         
     }
     
