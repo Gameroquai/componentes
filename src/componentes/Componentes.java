@@ -22,24 +22,22 @@ public class Componentes extends JFrame{
 
     
     public static void main(String[] args) {
-        /*Componentes ventanaP = new Componentes("Ejercicio Componentes");
+        Componentes ventanaP = new Componentes("Ejercicio Componentes");
         ventanaP.setBounds(100, 100, 600, 600);
         ventanaP.setVisible(true);
-        ventanaP.setDefaultCloseOperation(EXIT_ON_CLOSE);*/
-        JTabbedPane panelB = new JTabbedPane();
+        ventanaP.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
 
     public Componentes(String title) throws HeadlessException {
         super(title);
-        //ComponentesTabbed jar = new ComponentesTabbed();
-        //setContentPane(jar);
-        ComponentesBotones();
-        this.setContentPane(rootPane);
+        add(new ComponentesTabbed());
+        /*ComponentesBotones();
+        this.setContentPane(rootPane);*/
         
     }
     
-    void ComponentesBotones(){
+    /*void ComponentesBotones(){
         JTabbedPane tabs;
         JPanel panelBotones, pBotN, pBotS, pBotE, pBotO, pBotC;
         tabs = new JTabbedPane();
@@ -63,6 +61,6 @@ public class Componentes extends JFrame{
         pBotO.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
         panelBotones.add(pBotC, BorderLayout.CENTER);
         pBotS.setBorder(BorderFactory.createLineBorder(Color.magenta));
-    }
+    }*/
     
 }

@@ -16,33 +16,41 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
 
 
-public class ComponentesTabbed extends JFrame{
-    
-    JTabbedPane tabs;
+public class ComponentesTabbed extends JTabbedPane{
     JPanel panelBotones, pBotN, pBotS, pBotE, pBotO, pBotC;
-
+    JPanel panelCombos;
+    JPanel panelEtiqueta;
+    JPanel panelTextos;
+    
     public ComponentesTabbed() throws HeadlessException {
-        tabs = new JTabbedPane();
-        tabs.setBorder(BorderFactory.createTitledBorder("Titulo panel exterior"));
-        tabs.addTab("Botones", panelBotones);
-        tabs.setVisible(true);
         
         panelBotones = new JPanel(new BorderLayout());
+        panelCombos = new JPanel();
+        panelEtiqueta = new JPanel();
+        panelTextos = new JPanel();
+        
         pBotN = new JPanel();
-        pBotS = new JPanel();
-        pBotO = new JPanel();
-        pBotE = new JPanel();
-        pBotC = new JPanel();
-        panelBotones.add(pBotN, BorderLayout.NORTH);
         pBotN.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        panelBotones.add(pBotS, BorderLayout.SOUTH);
-        pBotS.setBorder(BorderFactory.createLineBorder(Color.red));
-        panelBotones.add(pBotE, BorderLayout.EAST);
+        pBotE = new JPanel();
         pBotE.setBorder(BorderFactory.createLineBorder(Color.blue));
-        panelBotones.add(pBotO, BorderLayout.WEST);
-        pBotO.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        pBotC = new JPanel();
+        pBotC.setBorder(BorderFactory.createLineBorder(Color.magenta));
+        pBotO = new JPanel();
+        pBotO.setBorder(BorderFactory.createLineBorder(Color.orange));
+        pBotS = new JPanel();
+        pBotS.setBorder(BorderFactory.createLineBorder(Color.red));
+                
+        panelBotones.add(pBotN, BorderLayout.NORTH);
+        panelBotones.add(pBotE, BorderLayout.EAST);
         panelBotones.add(pBotC, BorderLayout.CENTER);
-        pBotS.setBorder(BorderFactory.createLineBorder(Color.magenta));
+        panelBotones.add(pBotO, BorderLayout.WEST);
+        panelBotones.add(pBotS, BorderLayout.SOUTH);
+        
+                
+        addTab("Botones", panelBotones);
+        addTab("Combos", panelCombos);
+        addTab("Etiquetas", panelEtiqueta);
+        addTab("Textos", panelTextos);
     }
     
 }
