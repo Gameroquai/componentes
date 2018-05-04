@@ -23,8 +23,9 @@ public class Componentes extends JFrame{
     
     public static void main(String[] args) {
         Componentes ventanaP = new Componentes("Ejercicio Componentes");
-        ventanaP.setBounds(100, 100, 600, 600);
+        ventanaP.setBounds(100, 25, 600, 700);
         ventanaP.setVisible(true);
+        ventanaP.setResizable(false);
         ventanaP.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
